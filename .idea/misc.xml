@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable-anydpi-v24/ic_favorite.xml" value="0.198" />
+        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable-anydpi-v24/ic_favorite_border.xml" value="0.198" />
+        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable-v24/ic_netology_ru.xml" value="0.149" />
         <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
         <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.18" />
-        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable/ic_options_24dp.xml" value="0.14" />
+        <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.2527646129541864" />
       </map>
     </option>
   </component>
