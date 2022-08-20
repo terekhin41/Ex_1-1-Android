@@ -21,30 +21,30 @@
         android:contentDescription="@string/avatar" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textView"
+        android:id="@+id/author"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
         android:layout_marginEnd="@dimen/common_spacing"
         android:ellipsize="end"
         android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/published"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toEndOf="@+id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar"
         tools:text="Автор поста" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textView2"
+        android:id="@+id/published"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="@+id/avatar"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/author"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@+id/author"
+        app:layout_constraintTop_toBottomOf="@id/author"
         tools:text="12.08.2022" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -53,14 +53,15 @@
         android:layout_height="48dp"
         android:layout_marginEnd="@dimen/common_spacing"
         android:background="#00000000"
+        android:contentDescription="@string/options"
         android:scaleX="1.25"
         android:scaleY="1.25"
         android:src="@drawable/ic_options_24dp"
         app:layout_constraintBottom_toBottomOf="@+id/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/options"
         tools:text="" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -68,10 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="textView2, avatar, button" />
+        app:constraint_referenced_ids="published, avatar, button" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/post_text"
+        android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
@@ -88,22 +89,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="post_text"/>
+        app:constraint_referenced_ids="content"/>
 
     <ImageView
         android:id="@+id/post_likes_image"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        app:srcCompat="@drawable/ic_favorite_border"
-        android:layout_marginTop="@dimen/common_spacing"
         android:layout_marginStart="@dimen/common_spacing"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:contentDescription="@string/likes"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/likes" />
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:srcCompat="@drawable/ic_favorite_border"
+        tools:ignore="ImageContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/likes_count"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:singleLine="true"
@@ -125,7 +127,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/share_count"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:singleLine="true"
@@ -147,7 +149,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/views_count"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:singleLine="true"
