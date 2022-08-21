@@ -5,20 +5,20 @@ data class Post(
     val author: String,
     val content: String,
     val published: String,
-    var likedByMe: Boolean = false,
-    var likes: Int = 0,
-    var share: Int = 0,
-    var views: Int = 0
+    val likedByMe: Boolean = false,
+    val likes: Int = 0,
+    val share: Int = 0,
+    val views: Int = 0
 ) {
 
-    fun like() {
+    /*fun like() {
         likedByMe = !likedByMe
         if (likedByMe) likes += 1 else likes -= 1
     }
 
     fun share() {
         share++
-    }
+    }*/
 
     fun likesToString() = valueFormatter(likes)
     fun shareToString() = valueFormatter(share)
