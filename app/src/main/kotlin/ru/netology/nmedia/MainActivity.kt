@@ -2,10 +2,15 @@ package ru.netology.nmedia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.annotation.DrawableRes
+import ru.netology.nmedia.data.viewModel.PostViewModel
 import ru.netology.nmedia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel by viewModels<PostViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -13,22 +18,16 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val post = Post(
-            id = 0L,
-            author = "Нетология. Меняем карьеру через образование",
-            content = "Events",
-            published = "16.08.2022"
-        )
-        binding.render(post)
-
-        binding.postLikesImage.setOnClickListener {
-            post.like()
+        viewModel.data.observe(this) { post ->
             binding.render(post)
         }
 
+        binding.postLikesImage.setOnClickListener {
+            viewModel.onLikeClicked()
+        }
+
         binding.postShareImage.setOnClickListener {
-            post.share()
-            binding.render(post)
+            viewModel.onShareClicked()
         }
     }
 
