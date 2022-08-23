@@ -6,4 +6,9 @@
     <string name="likes">Likes</string>
     <string name="share">share</string>
     <string name="views">views</string>
+    <string name="save">Save</string>
+    <string name="post_text">Post text</string>
+    <string name="menu_remove">Remove</string>
+    <string name="menu_edit">Edit</string>
+    <string name="edit_close">"Close "</string>
 </resources>
