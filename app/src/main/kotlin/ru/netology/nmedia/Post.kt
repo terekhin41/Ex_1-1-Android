@@ -11,15 +11,6 @@ data class Post(
     val views: Int = 0
 ) {
 
-    /*fun like() {
-        likedByMe = !likedByMe
-        if (likedByMe) likes += 1 else likes -= 1
-    }
-
-    fun share() {
-        share++
-    }*/
-
     fun likesToString() = valueFormatter(likes)
     fun shareToString() = valueFormatter(share)
     fun viewsToString() = valueFormatter(views)
