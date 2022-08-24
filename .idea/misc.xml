@@ -10,11 +10,18 @@
         <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.18" />
         <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/drawable/ic_options_24dp.xml" value="0.14" />
         <entry key="..\:/Users/Clevo/HW_IT/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.2527646129541864" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable-anydpi-v24/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable-v24/ic_netology_ru.xml" value="0.1855" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_edit_close_24.xml" value="0.259" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_edit_pen_24.xml" value="0.1255" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1855" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_like_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_options_24dp.xml" value="0.1855" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_save_24.xml" value="0.1" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/like_checkbox_tint.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post.xml" value="0.33" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/menu/options_post.xml" value="0.15648148148148147" />
       </map>
     </option>

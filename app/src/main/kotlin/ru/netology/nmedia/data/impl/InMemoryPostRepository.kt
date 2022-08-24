@@ -18,7 +18,8 @@ class InMemoryPostRepository : PostRepository {
                 id = index + 1L,
                 author = "Нетология — обучение современным профессиям онлайн",
                 content = "Events\nПост №$index",
-                published = "22.08.2022"
+                published = "22.08.2022",
+                views = 100_125
             )
         }
     )
