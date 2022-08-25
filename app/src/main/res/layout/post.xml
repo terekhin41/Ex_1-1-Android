@@ -25,10 +25,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
         android:layout_marginEnd="@dimen/common_spacing"
+        android:textStyle="bold"
+        android:textColor="#2B5279"
         android:ellipsize="end"
         android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/published"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/options"
         app:layout_constraintStart_toEndOf="@+id/avatar"
         app:layout_constraintTop_toTopOf="@+id/avatar"
         tools:text="Автор поста" />
@@ -47,11 +49,10 @@
         tools:text="12.08.2022" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/button"
+        android:id="@+id/options"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="@dimen/common_spacing"
-        android:background="#00000000"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/options"
         android:scaleX="1.25"
         android:scaleY="1.25"
@@ -68,10 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="published, avatar, button" />
+        app:constraint_referenced_ids="published, avatar, options" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/content"
+        android:id="@+id/postContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
@@ -88,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="content"/>
+        app:constraint_referenced_ids="postContent"/>
 
     <ImageView
         android:id="@+id/post_likes_image"
