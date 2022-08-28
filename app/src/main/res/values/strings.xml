@@ -11,4 +11,9 @@
     <string name="menu_remove">Remove</string>
     <string name="menu_edit">Edit</string>
     <string name="edit_close">"Close "</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="description_post_save">save</string>
+    <string name="add_post">add post</string>
+    <string name="videoCover">video cover</string>
+    <string name="ic_play">play</string>
 </resources>

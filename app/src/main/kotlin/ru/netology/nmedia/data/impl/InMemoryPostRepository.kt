@@ -19,7 +19,8 @@ class InMemoryPostRepository : PostRepository {
                 author = "Нетология — обучение современным профессиям онлайн",
                 content = "Events\nПост №$index",
                 published = "22.08.2022",
-                views = 100_125
+                views = 100_125,
+                videoUrl = "https://www.youtube.com/watch?v=WhWc3b3KhnY"
             )
         }
     )
@@ -47,6 +48,13 @@ class InMemoryPostRepository : PostRepository {
 
     override fun save(post: Post) {
         if (post.id == PostRepository.NEW_POST_ID) insert(post) else update(post)
+    }
+
+    override fun edit(postId: Long, postContent: String) {
+        data.value = posts.map {
+            if (it.id != postId) it
+            else it.copy(content = postContent)
+        }
     }
 
     private fun insert(post: Post) {
