@@ -38,34 +38,6 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             viewModel.onAddClicked()
         }
-        /*
-        binding.saveButton.setOnClickListener {
-            with (binding.content) {
-                val content = text.toString()
-                viewModel.onSaveButtonClicked(content)
-                clearFocus()
-                hideKeyboard()
-            }
-        }
-
-        binding.editCloseImage.setOnClickListener {
-            viewModel.onCloseEdit()
-        }
-
-        viewModel.currentPost.observe(this) { currentPost ->
-            with (binding) {
-                content.setText(currentPost?.content)
-                if (currentPost != null) {
-                    editPostAuthor.text = currentPost.author
-                    editContent.text = currentPost.content
-                    editInfoLayout.visibility = View.VISIBLE
-                } else {
-                    editInfoLayout.visibility = View.GONE
-                    editPostAuthor.text = ""
-                    editContent.text = ""
-                }
-            }
-        }*/
 
         viewModel.sharePostContent.observe(this) { postContent ->
             val intent = Intent().apply {
