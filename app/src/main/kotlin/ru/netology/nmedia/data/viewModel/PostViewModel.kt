@@ -15,6 +15,7 @@ class PostViewModel : ViewModel(), PostInteractionListener {
 
     val sharePostContent = SingleLiveEvent<String>()
     val navigateToCreatePost = SingleLiveEvent<Unit>()
+    val navigateToEditPost = SingleLiveEvent<String>()
     val navigateToPlayVideo = SingleLiveEvent<String>()
     private var currentPost : Post? = null
 
@@ -46,7 +47,7 @@ class PostViewModel : ViewModel(), PostInteractionListener {
     }
     override fun onEditClicked(post: Post) {
         currentPost = post
-        navigateToCreatePost.call()
+        navigateToEditPost.value = post.content
     }
 
     override fun onPlayClicked(post: Post) {
