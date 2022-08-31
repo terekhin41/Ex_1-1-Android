@@ -16,6 +16,8 @@ interface PostRepository {
 
     fun edit(postId: Long, postContent: String)
 
+    fun getPostById(id: Long) : Post?
+
     companion object {
         const val NEW_POST_ID = 0L
     }
