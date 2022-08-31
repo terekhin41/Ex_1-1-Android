@@ -1,4 +1,4 @@
-package ru.netology.nmedia.data.impl
+package ru.netology.nmedia.util
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
