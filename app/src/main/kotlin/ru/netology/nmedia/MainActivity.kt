@@ -1,13 +1,14 @@
 package ru.netology.nmedia
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
+import ru.netology.nmedia.activity.PostContentActivity
 import ru.netology.nmedia.data.adapter.PostsAdapter
 import ru.netology.nmedia.data.viewModel.PostViewModel
 import ru.netology.nmedia.databinding.ActivityMainBinding
-import ru.netology.nmedia.util.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,36 +22,47 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = PostsAdapter(viewModel)
+
         binding.postsRecyclerView.adapter = adapter
         viewModel.data.observe(this) { posts ->
             adapter.submitList(posts)
         }
-        binding.saveButton.setOnClickListener {
-            with (binding.content) {
-                val content = text.toString()
-                viewModel.onSaveButtonClicked(content)
-                clearFocus()
-                hideKeyboard()
-            }
+
+        binding.fab.setOnClickListener {
+            viewModel.onAddClicked()
         }
 
-        binding.editCloseImage.setOnClickListener {
-            viewModel.onCloseEdit()
+        viewModel.sharePostContent.observe(this) { postContent ->
+            val intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, postContent)
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(
+                intent, getString(R.string.chooser_share_post)
+            )
+            startActivity(shareIntent)
         }
 
-        viewModel.currentPost.observe(this) { currentPost ->
-            with (binding) {
-                content.setText(currentPost?.content)
-                if (currentPost != null) {
-                    editPostAuthor.text = currentPost.author
-                    editContent.text = currentPost.content
-                    editInfoLayout.visibility = View.VISIBLE
-                } else {
-                    editInfoLayout.visibility = View.GONE
-                    editPostAuthor.text = ""
-                    editContent.text = ""
-                }
-            }
+        val postActivityLauncher = registerForActivityResult(
+            PostContentActivity.ResultContract
+        ) { postContent : String? ->
+            postContent ?: return@registerForActivityResult
+            viewModel.createPost(postContent)
+        }
+
+        viewModel.navigateToCreatePost.observe(this) {
+            postActivityLauncher.launch(null)
+        }
+
+        viewModel.navigateToEditPost.observe(this) {
+            postActivityLauncher.launch(it)
+        }
+
+        viewModel.navigateToPlayVideo.observe(this) {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it))
+            startActivity(intent)
         }
     }
 }
