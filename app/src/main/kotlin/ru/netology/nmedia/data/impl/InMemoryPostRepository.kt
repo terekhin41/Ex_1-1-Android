@@ -57,13 +57,6 @@ class InMemoryPostRepository : PostRepository {
         }
     }
 
-    override fun getPostById(id: Long) : Post? {
-        posts.map {
-            if (it.id == id) return it
-        }
-        return null
-    }
-
     private fun insert(post: Post) {
         data.value = listOf(post.copy(id = ++nextId)) + posts
     }
