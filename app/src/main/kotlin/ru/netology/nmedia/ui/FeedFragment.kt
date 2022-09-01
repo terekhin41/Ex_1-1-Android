@@ -32,16 +32,6 @@ class FeedFragment : Fragment() {
             startActivity(shareIntent)
         }
 
-        setFragmentResultListener(
-            requestKey = PostContentFragment.REQUEST_KEY
-        ) { requestKey, bundle ->
-            if (requestKey != PostContentFragment.REQUEST_KEY) return@setFragmentResultListener
-            val newPostContent = bundle.getString(
-                PostContentFragment.RESULT_KEY
-            ) ?: return@setFragmentResultListener
-            viewModel.createPost(newPostContent)
-        }
-
         viewModel.navigateToCreatePost.observe(this) { initialContent ->
             val direction = FeedFragmentDirections.toPostContentFragment(initialContent)
             findNavController().navigate(direction)
@@ -75,4 +65,18 @@ class FeedFragment : Fragment() {
                 viewModel.onAddClicked()
             }
     }.root
+
+    override fun onResume() {
+        super.onResume()
+
+        setFragmentResultListener(
+            requestKey = PostContentFragment.REQUEST_KEY
+        ) { requestKey, bundle ->
+            if (requestKey != PostContentFragment.REQUEST_KEY) return@setFragmentResultListener
+            val newPostContent = bundle.getString(
+                PostContentFragment.RESULT_KEY
+            ) ?: return@setFragmentResultListener
+            viewModel.createPost(newPostContent)
+        }
+    }
 }
