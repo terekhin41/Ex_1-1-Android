@@ -1,6 +1,7 @@
 package ru.netology.nmedia.ui
 
 import android.content.Intent
+import android.database.SQLException
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.data.adapter.PostsAdapter.ViewHolder
 import ru.netology.nmedia.data.viewModel.PostViewModel
 import ru.netology.nmedia.databinding.PostFragmentBinding
+import java.lang.Exception
 
 class PostFragment : Fragment() {
 
@@ -77,7 +79,5 @@ class PostFragment : Fragment() {
 
 
 
-    private fun getPost(): Post? {
-        return viewModel.getPostById(args.postId)
-    }
+    private fun getPost(): Post? = viewModel.getPostById(args.postId)
 }

@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import ru.netology.nmedia.Post
-import ru.netology.nmedia.data.PostRepository
 import kotlin.properties.Delegates
 
 class FilePostRepository(
@@ -74,13 +73,6 @@ class FilePostRepository(
 
     override fun save(post: Post) {
         if (post.id == PostRepository.NEW_POST_ID) insert(post) else update(post)
-    }
-
-    override fun edit(postId: Long, postContent: String) {
-        posts = posts.map {
-            if (it.id != postId) it
-            else it.copy(content = postContent)
-        }
     }
 
     override fun getPostById(id: Long) : Post? {

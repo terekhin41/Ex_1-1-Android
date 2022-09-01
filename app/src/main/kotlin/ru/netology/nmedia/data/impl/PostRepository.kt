@@ -1,4 +1,4 @@
-package ru.netology.nmedia.data
+package ru.netology.nmedia.data.impl
 
 import androidx.lifecycle.LiveData
 import ru.netology.nmedia.Post
@@ -13,8 +13,6 @@ interface PostRepository {
     fun delete(postId: Long)
 
     fun save(post: Post)
-
-    fun edit(postId: Long, postContent: String)
 
     fun getPostById(id: Long) : Post?
 
