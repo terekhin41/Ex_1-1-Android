@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.Post
 import ru.netology.nmedia.R
-import ru.netology.nmedia.databinding.PostFragmentBinding
+import ru.netology.nmedia.databinding.PostBinding
 
 internal class PostsAdapter(
     private val interactionListener: PostInteractionListener
@@ -17,7 +17,7 @@ internal class PostsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = PostFragmentBinding.inflate(inflater, parent, false)
+        val binding = PostBinding.inflate(inflater, parent, false)
         return ViewHolder(binding, interactionListener)
     }
 
@@ -25,8 +25,8 @@ internal class PostsAdapter(
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(
-        private val binding: PostFragmentBinding,
+    inner class ViewHolder(
+        private val binding: PostBinding,
         listener: PostInteractionListener
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -52,7 +52,6 @@ internal class PostsAdapter(
         }
 
         init {
-            binding.postFragmentLayout.setOnClickListener { listener.onPostClicked(post) }
             binding.postLikesButton.setOnClickListener { listener.onLikeClicked(post) }
             binding.postShareButton.setOnClickListener { listener.onShareClicked(post) }
             binding.videoContentLayout.setOnClickListener { listener.onPlayClicked(post) }

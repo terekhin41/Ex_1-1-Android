@@ -6,6 +6,7 @@ import ru.netology.nmedia.Post
 import ru.netology.nmedia.data.PostRepository
 import ru.netology.nmedia.data.adapter.PostInteractionListener
 import ru.netology.nmedia.data.impl.FilePostRepository
+import ru.netology.nmedia.data.impl.SharedPrefPostRepository
 import ru.netology.nmedia.util.SingleLiveEvent
 
 class PostViewModel(
@@ -18,9 +19,9 @@ class PostViewModel(
     val data by repository::data
 
     val sharePostContent = SingleLiveEvent<String>()
-    val navigateToCreatePost = SingleLiveEvent<String?>()
+    val navigateToCreatePost = SingleLiveEvent<Unit>()
+    val navigateToEditPost = SingleLiveEvent<String>()
     val navigateToPlayVideo = SingleLiveEvent<String>()
-    val navigateToPost = SingleLiveEvent<Long>()
     private var currentPost : Post? = null
 
     fun createPost(content: String) {
@@ -38,35 +39,24 @@ class PostViewModel(
     }
 
     override fun onAddClicked() {
-        currentPost = null
         navigateToCreatePost.call()
     }
-
     override fun onLikeClicked(post: Post) {
         repository.like(post.id)
     }
-
     override fun onShareClicked(post: Post) {
         sharePostContent.value = post.content
     }
-
     override fun onRemoveClicked(post: Post) {
         repository.delete(post.id)
     }
-
     override fun onEditClicked(post: Post) {
         currentPost = post
-        navigateToCreatePost.value = post.content
+        navigateToEditPost.value = post.content
     }
 
     override fun onPlayClicked(post: Post) {
         val url : String = if (post.videoUrl != null) post.videoUrl!! else return
         navigateToPlayVideo.value = url
     }
-
-    override fun onPostClicked(post: Post) {
-        navigateToPost.value = post.id
-    }
-
-    fun getPostById(id: Long) = repository.getPostById(id)
 }
