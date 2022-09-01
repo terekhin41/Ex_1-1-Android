@@ -3,9 +3,10 @@ package ru.netology.nmedia.data.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import ru.netology.nmedia.Post
-import ru.netology.nmedia.data.PostRepository
+import ru.netology.nmedia.data.impl.PostRepository
 import ru.netology.nmedia.data.adapter.PostInteractionListener
-import ru.netology.nmedia.data.impl.FilePostRepository
+import ru.netology.nmedia.data.impl.AppDb
+import ru.netology.nmedia.data.impl.SQLiteRepository
 import ru.netology.nmedia.util.SingleLiveEvent
 
 class PostViewModel(
@@ -13,7 +14,11 @@ class PostViewModel(
 ) : AndroidViewModel(application), PostInteractionListener {
 
     private val repository: PostRepository =
-        FilePostRepository(application)
+        SQLiteRepository(
+            dao = AppDb.getInstance(
+                context = application
+                ).postDao
+        )
 
     val data by repository::data
 
@@ -48,6 +53,7 @@ class PostViewModel(
 
     override fun onShareClicked(post: Post) {
         sharePostContent.value = post.content
+        repository.share(post.id)
     }
 
     override fun onRemoveClicked(post: Post) {
@@ -68,5 +74,7 @@ class PostViewModel(
         navigateToPost.value = post.id
     }
 
-    fun getPostById(id: Long) = repository.getPostById(id)
+    fun getPostById(id: Long): Post? {
+        return repository.getPostById(id)
+    }
 }

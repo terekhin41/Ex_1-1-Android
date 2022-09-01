@@ -2,7 +2,6 @@ package ru.netology.nmedia.data.impl
 
 import androidx.lifecycle.MutableLiveData
 import ru.netology.nmedia.Post
-import ru.netology.nmedia.data.PostRepository
 
 class InMemoryPostRepository : PostRepository {
 
@@ -48,13 +47,6 @@ class InMemoryPostRepository : PostRepository {
 
     override fun save(post: Post) {
         if (post.id == PostRepository.NEW_POST_ID) insert(post) else update(post)
-    }
-
-    override fun edit(postId: Long, postContent: String) {
-        data.value = posts.map {
-            if (it.id != postId) it
-            else it.copy(content = postContent)
-        }
     }
 
     override fun getPostById(id: Long) : Post? {
