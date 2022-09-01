@@ -83,6 +83,13 @@ class FilePostRepository(
         }
     }
 
+    override fun getPostById(id: Long) : Post? {
+        posts.map {
+            if (it.id == id) return it
+        }
+        return null
+    }
+
     private fun insert(post: Post) {
         posts = listOf(post.copy(id = ++nextId)) + posts
     }
