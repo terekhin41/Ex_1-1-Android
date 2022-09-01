@@ -23,9 +23,13 @@
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/ic_save_24.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/drawable/like_checkbox_tint.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/activity_main.xml" value="0.17197452229299362" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/app_activity.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/feed_fragment.xml" value="0.13425925925925927" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/intent_handler_activity.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post.xml" value="0.1" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post_content_activity.xml" value="0.22" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post_content_fragment.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/layout/post_fragment.xml" value="0.12006079027355623" />
         <entry key="..\:/Users/Clevo/HW_IT/HW Actions/app/src/main/res/menu/options_post.xml" value="0.15648148148148147" />
       </map>
     </option>
