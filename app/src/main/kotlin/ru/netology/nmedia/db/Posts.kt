@@ -3,11 +3,22 @@ package ru.netology.nmedia.db
 import android.database.Cursor
 import ru.netology.nmedia.Post
 
-fun Cursor.toPost() = Post(
-    id = getLong(getColumnIndexOrThrow(PostsTable.Column.ID.columnName)),
-    author = getString(getColumnIndexOrThrow(PostsTable.Column.AUTHOR.columnName)),
-    content = getString(getColumnIndexOrThrow(PostsTable.Column.CONTENT.columnName)),
-    published = getString(getColumnIndexOrThrow(PostsTable.Column.PUBLISHED.columnName)),
-    likedByMe = getInt(getColumnIndexOrThrow(PostsTable.Column.LIKED_BY_ME.columnName)) != 0,
-    likes = getInt(getColumnIndexOrThrow(PostsTable.Column.LIKES.columnName))
+internal fun PostEntity.toModel() = Post(
+    id = id,
+    author = author,
+    content = content,
+    published = published,
+    likedByMe = likedByMe,
+    likes = likes,
+    share = share
+)
+
+internal fun Post.toEntity() = PostEntity(
+    id = id,
+    author = author,
+    content = content,
+    published = published,
+    likedByMe = likedByMe,
+    likes = likes,
+    share = share
 )
