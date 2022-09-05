@@ -17,4 +17,8 @@
     <string name="add_post">Добавить пост</string>
     <string name="videoCover">Обложка видео</string>
     <string name="ic_play">Играть</string>
+    <string name="notification_user_liked">%1$s поставил лайк посту %2$s</string>
+    <string name="channel_remote_name">Уведомления с сервера</string>
+    <string name="channel_remote_description">Уведомления с удаленного сервера</string>
+    <string name="notification_new_post">%1$s выложил новый пост</string>
 </resources>
